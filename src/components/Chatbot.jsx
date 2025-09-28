@@ -26,7 +26,7 @@ export default function Chatbot({ onClose }) {
 
   // === CONFIGURATION (Platform-ready) ===
   // Get backend URL from environment (supports multi-cloud deployment)
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3001";
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://chatbot-backend-production-8012.up.railway.app";
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
