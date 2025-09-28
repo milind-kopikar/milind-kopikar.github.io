@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import SaaSDetail from "./pages/SaaSDetail";
+import FloatingChatbot from "./components/FloatingChatbot";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/saas/:id" element={<SaaSDetail />} />
       </Routes>
+      <FloatingChatbot /> {/* Add this line here */}
     </Router>
   );
 }

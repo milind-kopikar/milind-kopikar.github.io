@@ -1,4 +1,5 @@
 import SaaSCard from "../components/SaaSCard";
+import Chatbot from "../components/Chatbot";
 
 const saasList = [
   {
@@ -27,6 +28,9 @@ export default function Home() {
           <SaaSCard key={saas.id} saas={saas} />
         ))}
       </div>
+      {/*}
+        <h2>Try our AI Chatbot!</h2>
+        <Chatbot /> */}
     </div>
   );
 }
