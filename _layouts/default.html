@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title | default: site.github.repository_name }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline }}">
+    
+    <!-- Jekyll Cayman Theme CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    
+    <!-- Devanagari Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Homepage Styles -->
+    <style>
+      /* Custom Homepage Styles */
+      .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        margin: -2rem -2rem 40px -2rem;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+
+      .hero-subtitle {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        opacity: 0.9;
+      }
+
+      .hero-description {
+        font-size: 1.1em;
+        opacity: 0.8;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .projects-section {
+        margin-bottom: 50px;
+      }
+
+      .projects-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #2c3e50;
+      }
+
+      .project-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      }
+
+      .project-card.coming-soon {
+        background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+        opacity: 0.8;
+      }
+
+      .project-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .project-icon {
+        font-size: 3em;
+        margin-right: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+
+      .project-title h3 {
+        margin: 0;
+        font-size: 1.5em;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      }
+
+      .project-subtitle {
+        margin: 5px 0 0 0;
+        opacity: 0.9;
+        font-size: 0.9em;
+      }
+
+      .project-description {
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      .project-features {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .feature-tag {
+        background: rgba(255,255,255,0.2);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        backdrop-filter: blur(10px);
+      }
+
+      .project-stats {
+        display: flex;
+        justify-content: space-around;
+        margin: 25px 0;
+        padding: 20px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-number {
+        display: block;
+        font-size: 1.8em;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      }
+
+      .stat-label {
+        font-size: 0.8em;
+        opacity: 0.9;
+      }
+
+      .project-actions {
+        display: flex;
+        gap: 15px;
+        margin: 25px 0;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        flex: 1;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        text-decoration: none;
+        color: white;
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.2);
+        color: white;
+        border: 2px solid rgba(255,255,255,0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255,255,255,0.3);
+        text-decoration: none;
+        color: white;
+      }
+
+      .btn-disabled {
+        background: rgba(255,255,255,0.1);
+        color: rgba(255,255,255,0.6);
+        cursor: not-allowed;
+      }
+
+      .project-tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .tech {
+        background: rgba(255,255,255,0.15);
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.75em;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .about-section, .contact-section {
+        margin: 50px 0;
+        padding: 30px;
+        background: #f8f9fa;
+        border-radius: 15px;
+      }
+
+      .about-section h2, .contact-section h2 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+
+      .about-content {
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .skills {
+        margin-top: 30px;
+      }
+
+      .skills h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .skill {
+        background: #667eea;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.8em;
+        font-weight: 500;
+      }
+
+      .contact-links {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .contact-link {
+        background: #667eea;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .contact-link:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+        text-decoration: none;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.2em;
+        }
+        
+        .project-header {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .project-icon {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+        
+        .project-actions {
+          flex-direction: column;
+        }
+        
+        .project-stats {
+          flex-direction: column;
+          gap: 15px;
+        }
+        
+        .contact-links {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .skill-tags {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+    </section>
+
+    <section class="main-content">
+      {{ content }}
+      
+      <footer class="site-footer">
+        <span class="site-footer-owner">Built with ❤️ for language preservation</span>
+      </footer>
+    </section>
+  </body>
+</html>

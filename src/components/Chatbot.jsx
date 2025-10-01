@@ -26,7 +26,7 @@ export default function Chatbot({ onClose }) {
 
   // === CONFIGURATION (Platform-ready) ===
   // Get backend URL from environment (supports multi-cloud deployment)
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://chatbot-backend-production-8012.up.railway.app";
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://chatbot-backend-h9um.onrender.com";
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
@@ -102,11 +102,7 @@ export default function Chatbot({ onClose }) {
 
       // Debug logging (only in development)
       if (debugMode) {
-        console.log("Sending to backend:", {
-          message: currentInput,
-          conversationLength: conversationHistory.length,
-          backend: BACKEND_URL
-        });
+        console.log("Sending message to AI backend");
       }
 
       // === CALL BACKEND API (Cloud-agnostic) ===
@@ -151,11 +147,7 @@ export default function Chatbot({ onClose }) {
 
       // Debug logging
       if (debugMode) {
-        console.log("AI Response:", {
-          provider: response.data.provider,
-          model: response.data.model,
-          usage: response.data.usage
-        });
+        console.log("AI Response received successfully");
       }
 
     } catch (error) {

@@ -1,146 +1,288 @@
----## Welcome to Hub Pages
+------## Welcome to Hub Pages
 
 layout: default
 
-title: Milind Kopikar - Software Engineer & Language EnthusiastYou can use the [editor on GitHub](https://github.com/milind-kopikar/milind-kopikar.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+title: Milind Kopikar - Software Engineer & Language Enthusiastlayout: default
 
 description: Software engineer passionate about preserving languages through technology. Creator of digital tools for language learning and cultural preservation.
 
----Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+---title: Milind Kopikar - Software Engineer & Language EnthusiastYou can use the [editor on GitHub](https://github.com/milind-kopikar/milind-kopikar.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
 
 
-<div class="hero-section">### Markdown
+<div class="hero-section">description: Software engineer passionate about preserving languages through technology. Creator of digital tools for language learning and cultural preservation.
 
   <div class="hero-content">
 
-    <h1>Milind Kopikar</h1>Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    <h1>Milind Kopikar</h1>---Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
     <p class="hero-subtitle">Software Engineer & Language Enthusiast</p>
 
-    <p class="hero-description">Building digital solutions to preserve and share cultural heritage through technology</p>```markdown
+    <p class="hero-description">Building digital solutions to preserve and share cultural heritage through technology</p>
 
-  </div>Syntax highlighted code block
+  </div>
 
-</div>
+</div><div class="hero-section">### Markdown
 
-# Header 1
 
-<div class="projects-section">## Header 2
 
-  <h2>Featured Projects</h2>### Header 3
+<div class="projects-section">  <div class="hero-content">
 
-  
+  <h2>Featured Projects</h2>
 
-  <!-- Konkani Dictionary App Card -->- Bulleted
+      <h1>Milind Kopikar</h1>Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-  <div class="project-card konkani-dictionary">- List
+  <!-- Konkani Dictionary App Card -->
+
+  <div class="project-card konkani-dictionary">    <p class="hero-subtitle">Software Engineer & Language Enthusiast</p>
 
     <div class="project-header">
 
-      <div class="project-icon">🕉️</div>1. Numbered
+      <div class="project-icon">🕉️</div>    <p class="hero-description">Building digital solutions to preserve and share cultural heritage through technology</p>```markdown
 
-      <div class="project-title">2. List
+      <div class="project-title">
 
-        <h3>Amchigale Konkani Dictionary</h3>
+        <h3>Amchigale Konkani Dictionary</h3>  </div>Syntax highlighted code block
 
-        <p class="project-subtitle">Digital Language Preservation • 4,381 Entries</p>**Bold** and _Italic_ and `Code` text
+        <p class="project-subtitle">Digital Language Preservation • 4,381 Entries</p>
 
-      </div>
+      </div></div>
 
-    </div>[Link](url) and ![Image](src)
+    </div>
 
-    ```
+    # Header 1
 
     <div class="project-description">
 
-      <p>Complete digital dictionary for the Konkani language featuring Devanagari script, English translations, and modern search capabilities. Built to preserve this beautiful Indian language for future generations.</p>For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+      <p>Complete digital dictionary for the Konkani language featuring Devanagari script, English translations, and modern search capabilities. Built to preserve this beautiful Indian language for future generations.</p><div class="projects-section">## Header 2
 
       
 
-      <div class="project-features">### Jekyll Themes
+      <div class="project-features">  <h2>Featured Projects</h2>### Header 3
 
         <span class="feature-tag">🔍 Smart Search</span>
 
-        <span class="feature-tag">📱 Mobile Ready</span>Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/milind-kopikar/milind-kopikar.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+        <span class="feature-tag">📱 Mobile Ready</span>  
 
         <span class="feature-tag">🌐 Unicode Support</span>
 
-        <span class="feature-tag">🤖 API Ready</span>### Support or Contact
+        <span class="feature-tag">🤖 API Ready</span>  <!-- Konkani Dictionary App Card -->- Bulleted
 
       </div>
 
-    </div>Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    </div>  <div class="project-card konkani-dictionary">- List
 
     
-    <div class="project-stats">
+
+    <div class="project-stats">    <div class="project-header">
+
       <div class="stat">
-        <span class="stat-number">4,381</span>
+
+        <span class="stat-number">4,381</span>      <div class="project-icon">🕉️</div>1. Numbered
+
         <span class="stat-label">Dictionary Entries</span>
-      </div>
+
+      </div>      <div class="project-title">2. List
+
       <div class="stat">
-        <span class="stat-number">83%</span>
+
+        <span class="stat-number">83%</span>        <h3>Amchigale Konkani Dictionary</h3>
+
         <span class="stat-label">Devanagari Script</span>
-      </div>
+
+      </div>        <p class="project-subtitle">Digital Language Preservation • 4,381 Entries</p>**Bold** and _Italic_ and `Code` text
+
       <div class="stat">
-        <span class="stat-number">6</span>
+
+        <span class="stat-number">6</span>      </div>
+
         <span class="stat-label">Search Types</span>
-      </div>
+
+      </div>    </div>[Link](url) and ![Image](src)
+
     </div>
-    
+
+        ```
+
     <div class="project-actions">
-      <a href="/konkani-dictionary/" class="btn btn-primary">
+
+      <a href="/konkani-dictionary/" class="btn btn-primary">    <div class="project-description">
+
         🚀 Open Dictionary
-      </a>
+
+      </a>      <p>Complete digital dictionary for the Konkani language featuring Devanagari script, English translations, and modern search capabilities. Built to preserve this beautiful Indian language for future generations.</p>For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+
       <a href="https://github.com/milind-kopikar/konkani-dictionary" class="btn btn-secondary" target="_blank">
-        📂 View Source
+
+        📂 View Source      
+
       </a>
-    </div>
+
+    </div>      <div class="project-features">### Jekyll Themes
+
     
-    <div class="project-tech-stack">
+
+    <div class="project-tech-stack">        <span class="feature-tag">🔍 Smart Search</span>
+
       <span class="tech">Node.js</span>
-      <span class="tech">PostgreSQL</span>
+
+      <span class="tech">PostgreSQL</span>        <span class="feature-tag">📱 Mobile Ready</span>Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/milind-kopikar/milind-kopikar.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+
       <span class="tech">Unicode</span>
-      <span class="tech">Railway</span>
-    </div>
-  </div>
 
-  <!-- Placeholder for future projects -->
+      <span class="tech">Railway</span>        <span class="feature-tag">🌐 Unicode Support</span>
+
+    </div>
+
+  </div>        <span class="feature-tag">🤖 API Ready</span>### Support or Contact
+
+
+
+  <!-- Placeholder for future projects -->      </div>
+
   <div class="project-card coming-soon">
-    <div class="project-header">
-      <div class="project-icon">🤖</div>
-      <div class="project-title">
-        <h3>WhatsApp Language Bot</h3>
-        <p class="project-subtitle">AI-Powered Language Learning • Coming Soon</p>
-      </div>
-    </div>
-    
-    <div class="project-description">
-      <p>Intelligent WhatsApp bot for language learning and translation, integrating with the Konkani dictionary for conversational language support.</p>
-      
-      <div class="project-features">
-        <span class="feature-tag">🧠 AI Integration</span>
-        <span class="feature-tag">💬 WhatsApp Bot</span>
-        <span class="feature-tag">🔄 Real-time Translation</span>
-        <span class="feature-tag">☁️ Google Cloud</span>
-      </div>
-    </div>
-    
-    <div class="project-actions">
-      <a href="#" class="btn btn-disabled">
-        ⏳ In Development
-      </a>
-    </div>
-    
-    <div class="project-tech-stack">
-      <span class="tech">Google Cloud</span>
-      <span class="tech">LLM Integration</span>
-      <span class="tech">WhatsApp API</span>
-      <span class="tech">Vector DB</span>
-    </div>
-  </div>
-</div>
 
+    <div class="project-header">    </div>Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+      <div class="project-icon">🤖</div>
+
+      <div class="project-title">    
+
+        <h3>WhatsApp Language Bot</h3>    <div class="project-stats">
+
+        <p class="project-subtitle">AI-Powered Language Learning • Coming Soon</p>      <div class="stat">
+
+      </div>        <span class="stat-number">4,381</span>
+
+    </div>        <span class="stat-label">Dictionary Entries</span>
+
+          </div>
+
+    <div class="project-description">      <div class="stat">
+
+      <p>Intelligent WhatsApp bot for language learning and translation, integrating with the Konkani dictionary for conversational language support.</p>        <span class="stat-number">83%</span>
+
+              <span class="stat-label">Devanagari Script</span>
+
+      <div class="project-features">      </div>
+
+        <span class="feature-tag">🧠 AI Integration</span>      <div class="stat">
+
+        <span class="feature-tag">💬 WhatsApp Bot</span>        <span class="stat-number">6</span>
+
+        <span class="feature-tag">🔄 Real-time Translation</span>        <span class="stat-label">Search Types</span>
+
+        <span class="feature-tag">☁️ Google Cloud</span>      </div>
+
+      </div>    </div>
+
+    </div>    
+
+        <div class="project-actions">
+
+    <div class="project-actions">      <a href="/konkani-dictionary/" class="btn btn-primary">
+
+      <a href="#" class="btn btn-disabled">        🚀 Open Dictionary
+
+        ⏳ In Development      </a>
+
+      </a>      <a href="https://github.com/milind-kopikar/konkani-dictionary" class="btn btn-secondary" target="_blank">
+
+    </div>        📂 View Source
+
+          </a>
+
+    <div class="project-tech-stack">    </div>
+
+      <span class="tech">Google Cloud</span>    
+
+      <span class="tech">LLM Integration</span>    <div class="project-tech-stack">
+
+      <span class="tech">WhatsApp API</span>      <span class="tech">Node.js</span>
+
+      <span class="tech">Vector DB</span>      <span class="tech">PostgreSQL</span>
+
+    </div>      <span class="tech">Unicode</span>
+
+  </div>      <span class="tech">Railway</span>
+
+</div>    </div>
+
+  </div>
+
+<div class="about-section">
+
+  <h2>About Me</h2>  <!-- Placeholder for future projects -->
+
+  <div class="about-content">  <div class="project-card coming-soon">
+
+    <p>Passionate software engineer with a deep interest in language preservation and cultural heritage. I believe technology can play a crucial role in keeping languages alive and accessible to future generations.</p>    <div class="project-header">
+
+          <div class="project-icon">🤖</div>
+
+    <p>Currently working on digital tools that make it easier for people to learn, use, and preserve their native languages, with a special focus on Indian regional languages like Konkani.</p>      <div class="project-title">
+
+            <h3>WhatsApp Language Bot</h3>
+
+    <div class="skills">        <p class="project-subtitle">AI-Powered Language Learning • Coming Soon</p>
+
+      <h3>Technical Skills</h3>      </div>
+
+      <div class="skill-tags">    </div>
+
+        <span class="skill">JavaScript/Node.js</span>    
+
+        <span class="skill">Python</span>    <div class="project-description">
+
+        <span class="skill">PostgreSQL</span>      <p>Intelligent WhatsApp bot for language learning and translation, integrating with the Konkani dictionary for conversational language support.</p>
+
+        <span class="skill">Google Cloud Platform</span>      
+
+        <span class="skill">React</span>      <div class="project-features">
+
+        <span class="skill">API Development</span>        <span class="feature-tag">🧠 AI Integration</span>
+
+        <span class="skill">Unicode/Internationalization</span>        <span class="feature-tag">💬 WhatsApp Bot</span>
+
+        <span class="skill">Language Processing</span>        <span class="feature-tag">🔄 Real-time Translation</span>
+
+      </div>        <span class="feature-tag">☁️ Google Cloud</span>
+
+    </div>      </div>
+
+  </div>    </div>
+
+</div>    
+
+    <div class="project-actions">
+
+<div class="contact-section">      <a href="#" class="btn btn-disabled">
+
+  <h2>Connect</h2>        ⏳ In Development
+
+  <div class="contact-links">      </a>
+
+    <a href="https://github.com/milind-kopikar" target="_blank" class="contact-link">    </div>
+
+      📂 GitHub    
+
+    </a>    <div class="project-tech-stack">
+
+    <a href="https://linkedin.com/in/milind-kopikar" target="_blank" class="contact-link">      <span class="tech">Google Cloud</span>
+
+      💼 LinkedIn      <span class="tech">LLM Integration</span>
+
+    </a>      <span class="tech">WhatsApp API</span>
+
+    <a href="mailto:your-email@example.com" class="contact-link">      <span class="tech">Vector DB</span>
+
+      ✉️ Email    </div>
+
+    </a>  </div>
+
+  </div></div>
+
+</div>
 <div class="about-section">
   <h2>About Me</h2>
   <div class="about-content">
