@@ -261,14 +261,14 @@
     
     <div class="container">
         <div class="header">
-            <h1>🕉️ Amchigale Konkani Dictionary</h1>
+            <h1>🕉️ TESTING VERSION 4.0 - Amchigale Konkani Dictionary</h1>
             <p>Preserving the beauty of the Konkani language</p>
         </div>
         
         <div class="search-section">
             <div class="search-container">
                 <input type="text" class="search-input" id="searchInput" placeholder="Search for Konkani or English words...">
-                <button class="search-btn" onclick="performSearch()">Search</button>
+                <button class="search-btn" onclick="console.log('🔍 Search button clicked!'); performSearch()">Search</button>
             </div>
             
             <div class="search-type">
@@ -283,7 +283,7 @@
         
         <div class="results-section" id="resultsSection">
             <div class="welcome-message">
-                <h3>Welcome to the Konkani Dictionary</h3>
+                <h3>Welcome to the Konkani Dictionary (v2.0)</h3>
                 <p>Search through 4,381 Konkani words and their English translations.</p>
                 <p>Try searching for words like "water", "love", "home", or any Konkani word you know!</p>
                 
@@ -306,8 +306,11 @@
     </div>
 
     <script>
+        console.log('🚀 JavaScript loaded - DEBUG VERSION v3.0');
         const API_BASE = 'https://konkani-dictionary-production.up.railway.app/api';
         let currentSearchType = 'all';
+        
+        console.log('API_BASE set to:', API_BASE);
         
         // Search type selection
         document.querySelectorAll('.search-type button').forEach(btn => {
@@ -326,10 +329,15 @@
         });
         
         async function performSearch() {
+            console.log('performSearch called');
             const query = document.getElementById('searchInput').value.trim();
             const resultsSection = document.getElementById('resultsSection');
             
+            console.log('Search query:', query);
+            console.log('Current search type:', currentSearchType);
+            
             if (!query) {
+                console.log('No query provided, showing welcome message');
                 resultsSection.innerHTML = `
                     <div class="welcome-message">
                         <h3>Please enter a search term</h3>
@@ -340,15 +348,24 @@
             }
             
             resultsSection.innerHTML = '<div class="loading">🔍 Searching...</div>';
+            console.log('Set loading message');
             
             try {
-                const response = await fetch(`${API_BASE}/dictionary/search?q=${encodeURIComponent(query)}&type=${currentSearchType}`);
+                const url = `${API_BASE}/dictionary/search?q=${encodeURIComponent(query)}&type=${currentSearchType}`;
+                console.log('Fetching from URL:', url);
+                
+                const response = await fetch(url);
+                console.log('Response received:', response.status, response.ok);
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 
                 const data = await response.json();
+                console.log('Data received:', data);
+                console.log('Results array:', data.results);
+                console.log('Results length:', data.results ? data.results.length : 'no results property');
+                
                 displayResults(data.results || []);
                 
             } catch (error) {
@@ -357,15 +374,22 @@
                     <div class="error">
                         <h3>⚠️ Connection Error</h3>
                         <p>Unable to connect to the dictionary server.</p>
-                        <p>Please ensure the local server is running at localhost:3002</p>
+                        <p>The backend service may be temporarily unavailable.</p>
                         <p>Error: ${error.message}</p>
                     </div>
                 `;
             }
         }
         
+        // Make performSearch available globally
+        window.performSearch = performSearch;
+        console.log('✅ performSearch function defined and attached to window');
+        
         function displayResults(results) {
             const resultsSection = document.getElementById('resultsSection');
+            
+            console.log('displayResults called with:', results);
+            console.log('Number of results:', results.length);
             
             if (results.length === 0) {
                 resultsSection.innerHTML = `
@@ -377,15 +401,19 @@
                 return;
             }
             
-            const resultsHTML = results.map(result => `
+            const resultsHTML = results.map(result => {
+                console.log('Processing result:', result);
+                return `
                 <div class="result-item">
-                    <div class="konkani-word">${result.konkani_word || 'N/A'}</div>
-                    <div class="english-word">${result.english_word || 'N/A'}</div>
-                    ${result.word_type ? `<div class="word-type">${result.word_type}</div>` : ''}
-                    ${result.definition ? `<div class="definition">${result.definition}</div>` : ''}
+                    <div class="konkani-word">${result.word_konkani_devanagari || 'N/A'}</div>
+                    <div class="english-word">${result.english_meaning || 'N/A'}</div>
+                    ${result.word_konkani_english_alphabet ? `<div class="word-type">${result.word_konkani_english_alphabet}</div>` : ''}
+                    ${result.context_usage_sentence ? `<div class="definition">${result.context_usage_sentence}</div>` : ''}
                 </div>
-            `).join('');
+            `;
+            }).join('');
             
+            console.log('Setting results HTML:', resultsHTML);
             resultsSection.innerHTML = resultsHTML;
         }
         
