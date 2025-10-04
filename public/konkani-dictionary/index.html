@@ -283,7 +283,7 @@
         
         <div class="results-section" id="resultsSection">
             <div class="welcome-message">
-                <h3>Welcome to the Konkani Dictionary</h3>
+                <h3>Welcome to the Konkani Dictionary (v2.0)</h3>
                 <p>Search through 4,381 Konkani words and their English translations.</p>
                 <p>Try searching for words like "water", "love", "home", or any Konkani word you know!</p>
                 
@@ -367,6 +367,9 @@
         function displayResults(results) {
             const resultsSection = document.getElementById('resultsSection');
             
+            console.log('displayResults called with:', results);
+            console.log('Number of results:', results.length);
+            
             if (results.length === 0) {
                 resultsSection.innerHTML = `
                     <div class="no-results">
@@ -377,15 +380,19 @@
                 return;
             }
             
-            const resultsHTML = results.map(result => `
+            const resultsHTML = results.map(result => {
+                console.log('Processing result:', result);
+                return `
                 <div class="result-item">
                     <div class="konkani-word">${result.word_konkani_devanagari || 'N/A'}</div>
                     <div class="english-word">${result.english_meaning || 'N/A'}</div>
                     ${result.word_konkani_english_alphabet ? `<div class="word-type">${result.word_konkani_english_alphabet}</div>` : ''}
                     ${result.context_usage_sentence ? `<div class="definition">${result.context_usage_sentence}</div>` : ''}
                 </div>
-            `).join('');
+            `;
+            }).join('');
             
+            console.log('Setting results HTML:', resultsHTML);
             resultsSection.innerHTML = resultsHTML;
         }
         
