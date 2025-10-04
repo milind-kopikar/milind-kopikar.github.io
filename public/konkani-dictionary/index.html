@@ -268,7 +268,7 @@
         <div class="search-section">
             <div class="search-container">
                 <input type="text" class="search-input" id="searchInput" placeholder="Search for Konkani or English words...">
-                <button class="search-btn" onclick="performSearch()">Search</button>
+                <button class="search-btn" onclick="console.log('🔍 Search button clicked!'); performSearch()">Search</button>
             </div>
             
             <div class="search-type">
@@ -306,8 +306,11 @@
     </div>
 
     <script>
+        console.log('🚀 JavaScript loaded - DEBUG VERSION v3.0');
         const API_BASE = 'https://konkani-dictionary-production.up.railway.app/api';
         let currentSearchType = 'all';
+        
+        console.log('API_BASE set to:', API_BASE);
         
         // Search type selection
         document.querySelectorAll('.search-type button').forEach(btn => {
@@ -377,6 +380,10 @@
                 `;
             }
         }
+        
+        // Make performSearch available globally
+        window.performSearch = performSearch;
+        console.log('✅ performSearch function defined and attached to window');
         
         function displayResults(results) {
             const resultsSection = document.getElementById('resultsSection');
