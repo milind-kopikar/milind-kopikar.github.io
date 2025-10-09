@@ -261,7 +261,7 @@
     
     <div class="container">
         <div class="header">
-            <h1>🕉️ Amchigale Konkani Dictionary</h1>
+            <h1>🕉️ TESTING VERSION 5.0 - ROOT LEVEL - Amchigale Konkani Dictionary</h1>
             <p>Preserving the beauty of the Konkani language</p>
         </div>
         
@@ -306,12 +306,31 @@
     </div>
 
     <script>
+        console.log('🚀 JavaScript loaded - ROOT LEVEL - DEBUG VERSION v5.0');
         const API_BASE = 'https://konkani-dictionary-production.up.railway.app/api';
         let currentSearchType = 'all';
+        
+        console.log('API_BASE set to:', API_BASE);
+        console.log('This is the ROOT LEVEL file in gh-pages branch');
+        
+        // Test API immediately on load
+        console.log('Testing API connection from ROOT LEVEL...');
+        fetch(`${API_BASE}/stats`)
+            .then(response => {
+                console.log('API test response status:', response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log('✅ API working from ROOT LEVEL! Stats:', data);
+            })
+            .catch(error => {
+                console.error('❌ API test failed from ROOT LEVEL:', error);
+            });
         
         // Search type selection
         document.querySelectorAll('.search-type button').forEach(btn => {
             btn.addEventListener('click', function() {
+                console.log('Search type button clicked:', this.dataset.type);
                 document.querySelectorAll('.search-type button').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 currentSearchType = this.dataset.type;
@@ -321,15 +340,21 @@
         // Enter key search
         document.getElementById('searchInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
+                console.log('Enter key pressed, calling performSearch');
                 performSearch();
             }
         });
         
         async function performSearch() {
+            console.log('🔍 performSearch called from ROOT LEVEL - v5.0');
             const query = document.getElementById('searchInput').value.trim();
             const resultsSection = document.getElementById('resultsSection');
             
+            console.log('Search query:', query);
+            console.log('Current search type:', currentSearchType);
+            
             if (!query) {
+                console.log('No query provided, showing welcome message');
                 resultsSection.innerHTML = `
                     <div class="welcome-message">
                         <h3>Please enter a search term</h3>
@@ -340,25 +365,44 @@
             }
             
             resultsSection.innerHTML = '<div class="loading">🔍 Searching...</div>';
+            console.log('Set loading message');
             
             try {
-                const response = await fetch(`${API_BASE}/dictionary/search?q=${encodeURIComponent(query)}&type=${currentSearchType}`);
+                const url = `${API_BASE}/dictionary/search?q=${encodeURIComponent(query)}&type=${currentSearchType}`;
+                console.log('Fetching from URL:', url);
+                
+                const response = await fetch(url);
+                console.log('Response received:', response.status, response.ok);
+                console.log('Response headers:', [...response.headers.entries()]);
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 
                 const data = await response.json();
+                console.log('📊 Raw data received (ROOT LEVEL):', data);
+                console.log('📊 Data type:', typeof data);
+                console.log('📊 Data keys:', Object.keys(data));
+                console.log('📊 Results array:', data.results);
+                console.log('📊 Results length:', data.results ? data.results.length : 'no results property');
+                
+                if (data.results && data.results.length > 0) {
+                    console.log('📊 First result sample (ROOT LEVEL):', data.results[0]);
+                    console.log('📊 First result keys:', Object.keys(data.results[0]));
+                }
+                
                 displayResults(data.results || []);
                 
             } catch (error) {
-                console.error('Search error:', error);
+                console.error('❌ Search error (ROOT LEVEL):', error);
                 resultsSection.innerHTML = `
                     <div class="error">
                         <h3>⚠️ Connection Error</h3>
                         <p>Unable to connect to the dictionary server.</p>
-                        <p>Please ensure the local server is running at localhost:3002</p>
+                        <p>The backend service may be temporarily unavailable.</p>
                         <p>Error: ${error.message}</p>
+                        <p>Debug: Check console for more details (F12)</p>
+                        <p>ROOT LEVEL FILE</p>
                     </div>
                 `;
             }
@@ -367,38 +411,64 @@
         function displayResults(results) {
             const resultsSection = document.getElementById('resultsSection');
             
+            console.log('🎨 displayResults called (ROOT LEVEL) with:', results);
+            console.log('🎨 Number of results:', results.length);
+            
             if (results.length === 0) {
+                console.log('🎨 No results, showing no-results message');
                 resultsSection.innerHTML = `
                     <div class="no-results">
                         <h3>No results found</h3>
                         <p>Try a different search term or search type.</p>
+                        <p>Debug: Check console for API response details</p>
+                        <p>ROOT LEVEL FILE</p>
                     </div>
                 `;
                 return;
             }
             
-            const resultsHTML = results.map(result => `
+            console.log('🎨 Creating HTML for', results.length, 'results (ROOT LEVEL)');
+            const resultsHTML = results.map((result, index) => {
+                console.log(`🎨 Processing result ${index + 1} (ROOT LEVEL):`, result);
+                const konknaiWord = result.word_konkani_devanagari || 'N/A';
+                const englishMeaning = result.english_meaning || 'N/A';
+                const englishAlphabet = result.word_konkani_english_alphabet || '';
+                const contextSentence = result.context_usage_sentence || '';
+                
+                console.log(`🎨 Result ${index + 1} (ROOT) - Konkani: "${konknaiWord}", English: "${englishMeaning}"`);
+                
+                return `
                 <div class="result-item">
-                    <div class="konkani-word">${result.konkani_word || 'N/A'}</div>
-                    <div class="english-word">${result.english_word || 'N/A'}</div>
-                    ${result.word_type ? `<div class="word-type">${result.word_type}</div>` : ''}
-                    ${result.definition ? `<div class="definition">${result.definition}</div>` : ''}
+                    <div class="konkani-word">${konknaiWord}</div>
+                    <div class="english-word">${englishMeaning}</div>
+                    ${englishAlphabet ? `<div class="word-type">${englishAlphabet}</div>` : ''}
+                    ${contextSentence ? `<div class="definition">${contextSentence}</div>` : ''}
                 </div>
-            `).join('');
+            `;
+            }).join('');
             
+            console.log('🎨 Final HTML length (ROOT LEVEL):', resultsHTML.length);
+            console.log('🎨 Setting results HTML (ROOT LEVEL)');
             resultsSection.innerHTML = resultsHTML;
+            console.log('🎨 Results displayed successfully (ROOT LEVEL)');
         }
         
         // Test server connection on load
         window.addEventListener('load', async function() {
+            console.log('🌐 Window loaded (ROOT LEVEL), testing server connection...');
             try {
                 const response = await fetch(`${API_BASE}/stats`);
                 if (response.ok) {
                     const stats = await response.json();
-                    console.log('✅ Connected to dictionary server:', stats);
+                    console.log('✅ Connected to dictionary server (ROOT LEVEL):', stats);
+                    
+                    // Update stats in welcome message
+                    document.querySelector('.stat-number').textContent = stats.total_entries || '4,381';
+                } else {
+                    console.warn('⚠️ Dictionary server responded with status (ROOT LEVEL):', response.status);
                 }
             } catch (error) {
-                console.warn('⚠️ Dictionary server not available:', error.message);
+                console.warn('⚠️ Dictionary server not available (ROOT LEVEL):', error.message);
             }
         });
     </script>
