@@ -5,17 +5,14 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'TutorFlow AI – Unlock AP Stat Potential with AI',
-  description: 'AI-powered AP Statistics tutor. Upload notes, get consolidated curriculum, chat with AI, and track your progress.',
+  description:
+    'AI-powered AP Statistics tutor. Upload notes, get curriculum-aligned practice, chat with an AI tutor, and track your progress.',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className="flex min-h-screen flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
@@ -23,3 +20,4 @@ export default function RootLayout({
     </html>
   );
 }
+

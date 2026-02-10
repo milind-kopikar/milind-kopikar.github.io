@@ -1,23 +1,32 @@
 const features = [
   {
     title: 'Notes-Based Practice',
-    description: 'Upload your class notes and get quizzes tailored to what your teacher covered—aligned with the AP Statistics curriculum.',
+    description:
+      'Upload your class notes and get practice built from exactly what your teacher covered, aligned to AP Statistics units.',
   },
   {
     title: 'Adaptive Quizzing',
-    description: 'Practice with auto-generated multiple choice and free response. Get instant grading and step-by-step explanations.',
+    description:
+      'Automatic multiple choice and free-response quizzes with instant grading and step-by-step explanations.',
   },
   {
     title: 'Global Tutors',
-    description: 'See how you compare to other students preparing for the same exam and get suggestions on what to review next.',
+    description:
+      'See how you compare to other students and get smart suggestions on which AP Stat units to review next.',
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="border-t border-gray-100 bg-slate-50 px-4 py-16 sm:py-20" aria-labelledby="features-heading">
+    <section
+      className="border-t border-gray-100 bg-slate-50 px-4 py-16 sm:py-20"
+      aria-labelledby="features-heading"
+    >
       <div className="mx-auto max-w-6xl">
-        <h2 id="features-heading" className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2
+          id="features-heading"
+          className="text-center text-2xl font-bold text-gray-900 sm:text-3xl"
+        >
           Features
         </h2>
         <div className="mt-10 grid gap-8 sm:grid-cols-3">
@@ -35,3 +44,4 @@ export default function FeaturesSection() {
     </section>
   );
 }
+

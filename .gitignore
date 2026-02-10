@@ -3,7 +3,7 @@ node_modules
 .pnp
 .pnp.js
 
-# build
+# next.js
 .next
 out
 
@@ -11,12 +11,17 @@ out
 .env
 .env*.local
 
-# debug
+# logs
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# system
 .DS_Store
 
-# IDE
+# editor
 .idea
 .vscode
 *.swp
 *.swo
+
